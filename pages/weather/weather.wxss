@@ -1,0 +1,346 @@
+.backgroundView {
+  position: relative;
+  /* background-color: #F8F8F8; */
+  background-color: rgb(53, 75, 118);
+}
+.backgroundView.clearnight{
+  background-color: rgb(27, 35, 38);
+}
+.backgroundView.clearday{
+  background-color: rgb(53, 114, 198);
+}
+.backgroundView.cloudday{
+  background-color: rgb(53, 75, 118);
+}
+.backgroundView.overcast{
+  background-color: rgb(50, 63, 75)
+}
+.backgroundView.rainday{
+  background-color: rgb(27, 35, 38);
+}
+.topView {
+  background-color: #F8F8F8;
+  width: 100%; 
+  position: relative;
+  text-align:center;
+  /* height: 880rpx; */
+  height: 1440rpx;
+}
+.topImg {
+  width: 100%;  
+  height: 100%;
+}
+.location {
+  color: red;
+  padding: 10rpx;
+  font-size: 42rpx;
+  font-family: "PingFangSC-Medium";
+  text-align: center;
+  position: absolute; 
+   /* z-index: 2;  */
+  top: 10rpx;  
+  left: 0;
+  right: 0;
+  height: 56rpx;
+}
+.location view {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  white-space: nowrap; 
+}
+.location view text {
+  color: white;
+  font-size: 30rpx;
+  padding-right: 60rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 60rpx;
+  white-space: nowrap;
+  border-radius: 30rpx;
+  background-color: rgba(255, 255, 255, 0.1) ;
+}
+
+.icon-location{
+  font-size:36rpx;
+  color: #fff;
+  margin-right: -26rpx;
+  position: absolute;
+  z-index: 10;
+}
+.nowTemp {
+  text-align: center;
+  font-size: 100rpx;
+  color: #fafbfb;
+  font-family: "SFUIDisplay-Regular";
+  position: absolute; 
+  top: 150rpx;
+  left: 0;
+  right: 0;
+}
+.nowWind {
+  text-align: center;
+  color: white;
+  font-size: 30rpx;
+  position: absolute;
+  top: 182rpx;
+  left: 14px;
+}
+.nowWind .Img{
+  width: 48rpx;
+  height: 48rpx;
+  top: 10rpx;
+    position: relative;
+}
+.nowRestriction{
+  color: white;
+  font-size: 24rpx;
+  position: absolute;
+  top: 80rpx;
+  
+  right: 0;
+  padding: 10rpx;
+  height: 36rpx;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nowTime{
+  color: white;
+  font-size: 24rpx;
+  position: absolute;
+  top: 149rpx;
+  right: 0;
+  padding: 20rpx;
+  height: 106rpx;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.air_now {
+  text-align: center;
+  font-size: 40rpx;
+  color: white;
+  position: absolute; 
+  top: 54%;
+  left: 0;
+  right: 0;
+}
+.pm-text{
+  /* display: flex; */
+  font-size: 20rpx;
+  color: #fff;
+  line-height: 1.3;
+}
+.pm-text text{
+  padding-right: 5rpx;
+  color: #f9f9f9;
+  /* flex: 1; */
+}
+.historytoday {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  color: wheat;
+  background: green;
+  position: absolute; 
+  top: 85%;
+  right: 0;
+  border-radius: 40rpx 0 0 40rpx;
+}
+
+.hourly {
+  height: 194rpx;
+  white-space: nowrap; 
+  display: flex; 
+  position: absolute;
+  top: 335rpx;
+  background-color: rgba(255, 255, 255, 0.1) ;
+
+ 
+}
+.oneHourly {
+  height: 100%;
+  width: 150rpx;
+  display: inline-block;  
+  /* background-color: blue; */
+  /* letter-spacing:4px;   */
+  font-size:30rpx;  
+}
+.oneHourlyFlex {
+  width: 100%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.hourlyDate {
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-family: "SFUIDisplay-Regular";
+}
+.hourlyImg {
+  width: 48rpx;
+  height: 48rpx;
+  text-align: center;
+}
+.hourlyTmp {
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-family: "PingFangSC-Semibold";
+}
+.hourlyWind {
+  text-align: center;
+  color: #4B4B4B;
+  font-size: 28rpx;
+  font-family: "PingFangSC-Medium";
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.hourlyWind image {
+  width: 16rpx;
+  height: 28rpx;
+  margin-right: 5rpx;
+}
+.week {
+  /* width: 100%;
+  padding: 40rpx 0;
+  min-height: 200rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  position: absolute;
+  top:796rpx;
+  margin-bottom: 25rpx;
+  background-color: rgba(255, 255, 255, 0.1) ; */
+    width: 100%;
+    padding: 40rpx 0;
+    min-height: 200rpx;
+    overflow: hidden;
+    font-size: 24rpx;
+    position: absolute;
+    top: 703rpx;
+    overflow: hidden;
+    height: 648rpx;
+   
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+.week-weather {
+  display:flex;
+  padding: 0 20rpx;
+  text-align: center;
+
+  
+}
+.week-weather  .item {
+  flex: 1;
+  color: #fff
+}
+.week-weather  .item:first-child {
+  color: #ddd;
+}
+.week-weather  .day,
+.week-weather  .date,
+.week-weather  .wind {
+  color: #fff;
+}
+.week-weather .wind {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  height: 24rpx;
+  width: 80rpx;
+  margin: 0 auto 12rpx;
+  overflow: hidden;
+}
+.week-weather .date {
+  margin: 10rpx 0 30rpx;
+  font-size: 24rpx;
+}
+.week-weather .wt {
+  margin-bottom: 30rpx;
+}
+.week-weather .night {
+  margin-top: 272rpx;
+}
+.week-weather .night .wt {
+  margin: 32rpx 0 30rpx;
+}
+.week-weather .img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+}
+.week .week-chart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 300rpx;
+  top: 250rpx; 
+  
+}
+.week .week-chart canvas {
+  width: 100%;
+  height: 100%;
+}
+/**/
+.tips-list{
+  height: 155rpx;
+  white-space: nowrap; 
+  display: flex; 
+  position: absolute;
+  top: 538rpx;
+  width: 100%;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: rgba(255, 255, 255, 0.1) ;
+}
+.tips-list .item{
+  flex:1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  line-height: 2;
+}
+/*穿衣指数*/
+.lifeStyle-wrapper{
+}
+.lifeStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: space-between;
+}
+.life {
+  background-color: rgba(255, 255, 255, 0.1) ;
+  height: 120rpx;
+  padding: 35rpx 0;
+  align-items: center;
+  flex: 1;
+  margin: 0 5rpx;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.6;
+}
+.life-icon{
+  font-size: 48rpx;
+  color: #fff;
+}
+.lifeText {
+  width: 100%;
+  text-align: center; 
+  font-size: 25rpx;
+  color: #fff;
+}
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

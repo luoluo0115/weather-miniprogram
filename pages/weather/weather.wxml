@@ -1,0 +1,110 @@
+<wxs src="./weather.wxs" module="utils"></wxs>
+<view class='backgroundView {{utils.nowBackImage(Weathercode,lastUpdate)}}'>
+    <view class='content'>
+      <view class='topView'>
+        <image src='{{utils.statusData(Weathercode,lastUpdate)}}' class='topImg' mode='aspectFill'></image>
+        <view class='location' bindtap='chooseLocation'>
+          <view class="">
+            <icon class="./iconfont/iconzuobiao:before icon-location"></icon>
+            <text >{{LocationName}}</text>
+          </view>
+        </view>
+        <view class='nowTemp'>{{Temperature}}</view>
+        <view class='nowWind'>
+        <image class='Img' src='img/{{Weathercode}}@1x.png' mode='aspectFit'></image> 
+        {{Weathertext}}
+        </view>
+        <view class='nowRestriction' wx:if="{{restriction!=''}}">
+            {{memo}} {{plates}}
+        </view>
+        <view class='nowTime'>
+          <view>{{lunar_month_name}}月{{lunar_day_name}}</view>
+          <view>{{ganzhi_year}} [{{zodiac}}年] </view>
+          <view>{{ganzhi_month}}月 {{ganzhi_day}}日</view>
+        </view>
+      </view>
+      <view class="tips-list">
+        <view class="item">
+            <view >{{quality}}</view>
+            <view class="pm">
+              <view class="pm-text">
+                <text>PM10</text>{{pm10}}
+              </view>
+              <view class="pm-text">
+                <text>PM25</text>{{pm25}}
+              </view>
+              
+              
+            </view>
+        </view>
+        <view  class="item">
+            <view>湿度</view>
+            <view>{{humidity}}</view>
+        </view>
+        <view  class="item">
+            <view>{{wind_direction}}风</view>
+            <view >{{wind_scale}}级</view>
+      
+        </view>
+        <view  class="item">
+            <view>气压</view>
+            <view>{{pressure}}</view>
+        </view>
+        
+      </view>
+      <scroll-view class='hourly' scroll-x="true">
+        <block wx:for="{{hourly}}" wx:key="unique" style="display: block;">
+          <view class='oneHourly'>
+            <view class='oneHourlyFlex'>
+              <view class='hourlyDate'>{{utils.getLast(item.time)}}</view> 
+              <image class='hourlyImg' src='img/{{item.code}}@1x.png' mode='aspectFit'></image>
+              <view class='hourlyTmp'>{{item.temperature}}°</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      <view class="week">
+        <view class="week-weather">
+          <view class="item" wx:for="{{daily}}" wx:key="index">
+            <view class="day">{{ utils.formatWeeklyDate(index) }}</view>
+            <view class="date">{{ utils.formatDate(item.date) }}</view>
+            <view class="daytime">
+              <view class="wt">{{item.text_day}}</view>
+              <image class='img' src='img/{{item.code_day}}@1x.png' ></image> 
+            </view>
+            <view class="night">
+              <image class='img' src='img/{{item.code_night}}@1x.png' ></image> 
+              <view class="wt">{{item.text_night}}</view>
+            </view>
+            <view class="wind">{{ item.wind_direction }}风</view>
+            <view class="wind" >{{ item.wind_scale }}级</view>
+          </view>
+        </view>
+        <view class="week-chart" >
+          <ec-canvas bind:init="echartInit" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}" >></ec-canvas>
+        </view>
+      </view>
+    
+  </view>
+    <!--穿衣提示 -->
+    <view class="lifeStyle-wrapper">
+      <view class='lifeStyle'>
+        <view class='life'>
+          <icon class="./iconfont/iconicon-test:before life-icon"></icon>
+          <view class='lifeText'>感冒{{flu.brief}}</view>
+        </view>
+        <view class='life'>
+          <icon class="./iconfont/iconbiaoqianA01_pifu-46:before life-icon"></icon>
+          <view class='lifeText'>穿衣{{dressing.brief}}</view>
+        </view>
+        <view class='life'>
+          <icon class="./iconfont/icontianqi601:before life-icon"></icon>
+          <view class='lifeText'>风寒{{chill.brief}}</view>
+        </view>
+        <view class='life'>
+          <icon class="./iconfont/iconhuazhuang:before life-icon"></icon>
+          <view class='lifeText'>防晒{{sunscreen.brief}}</view>
+        </view>
+      </view>
+    </view>
+</view>

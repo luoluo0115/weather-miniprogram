@@ -1,0 +1,97 @@
+var WEEK_NAME = ['周一', '周二', '周三', '周四', '周五', '周六', '周日', '周一', '周二', '周三', '周四', '周五', '周六', '周日']
+// var WIND_MAP = ['微风', '东北风', '东风', '东南风', '南风', '西南风', '西风', '西北风', '北风', '旋转风']
+module.exports = {
+  humidity: function(h) {
+    if (h) {
+      return '湿度 ' + h + '%'
+    }
+    return h
+  },
+  windLevel: function(level) {
+    if (level === '1-2') {
+      return '微风'
+    } else {
+      return level + '级'
+    }
+  },
+  wind: function(code, level) {
+    if (!code) {
+      return '无风'
+    }
+
+    if (level) {
+      level = level.toString().split('-')
+      level = level[level.length - 1]
+      return code + ' ' + level + '级'
+    }
+    return code
+  },
+  formatWeeklyDate: function(i) {
+    var now = getDate()
+    var names = ['今天', '明天', '后天']
+    if (names[i]) {
+      return names[i]
+    }
+    var curWeek = now.getDay() - 1 + i
+
+    return WEEK_NAME[curWeek]
+  },
+  getDailyDate: function(i) {
+    if (index == 0) {
+      return "今天";
+    } else {
+      return str.split("-")[1] + "/" + str.split("-")[2];
+    }
+  },
+  getLast: function(i) {
+    var index=i;
+    if (index == 0) {
+      return "现在";
+    } else {
+      return index.substring(11, 16);
+    }
+  },
+  nowBackImage :function(Weathercode,lastUpdate) {
+    var code = Weathercode;
+    var thisMoment=lastUpdate;
+    if (code >= 38 && code <= 3) {
+      if (thisMoment>=18 || thisMoment < 6) {
+        return "clearday";
+      } else {
+        return "clearnight";
+      }
+    } else if (code >= 4 && code <= 8) {
+      return "cloudday";
+    } else if (code == 9) {
+      return "overcast";
+    } else if (code >= 10 && code <= 18) {
+      return "rainday";
+    } else if (code >= 19 && code <= 37) {
+      return "overcast";
+    } else {
+      return "clearday";
+    }
+  
+  },
+  statusData: function(Weathercode,lastUpdate) {
+    var code = Weathercode;
+    var thisMoment=lastUpdate;
+    if (code >= 38 && code <= 3) {
+      if (thisMoment>=18 || thisMoment < 6) {
+        return "https://apip.weatherdt.com/20200701/bg/h5/darkd.png";
+      } else {
+        return "https://apip.weatherdt.com/20200701/bg/h5/100d.png";
+      }
+    } else if (code >= 4 && code <= 8) {
+      return "https://apip.weatherdt.com/20200701/bg/h5/101d.png";
+    } else if (code == 9) {
+      return "https://apip.weatherdt.com/20200701/bg/h5/104d.png";
+    } else if (code >= 10 && code <= 18) {
+      return "https://apip.weatherdt.com/20200701/bg/h5/399d.png";
+    } else if (code >= 19 && code <= 37) {
+      return "https://apip.weatherdt.com/20200701/bg/h5/104d.png";
+    } else {
+      return "https://apip.weatherdt.com/20200701/bg/h5/100d.png";
+    }
+  },
+}
