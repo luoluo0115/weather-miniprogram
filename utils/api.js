@@ -1,5 +1,5 @@
-const mapKey = '2XRBZ-P4LK3-BGU3Q-YGSXQ-B3TXE-MWFEO'//腾讯地图 获取 KEY
-const weatherKey = 'SUUrfM4HnaoF6Iph5'//需要注册账号获取心知天气 获取KEY
+const mapKey = 'XXXXXXX'//腾讯地图 获取 KEY
+const weatherKey = 'XXXXXX'//需要注册账号获取心知天气 获取KEY
 // map url
 // map url
 const locationUrl = 'https://apis.map.qq.com/ws/geocoder/v1/'
