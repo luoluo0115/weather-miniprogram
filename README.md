@@ -16,7 +16,7 @@
 
 Run and Enjoy!
 
-如对您的开发有帮助,可以随意打赏
+如对您的开发有帮助,欢迎star
 
 WX: luoluo847314
 
